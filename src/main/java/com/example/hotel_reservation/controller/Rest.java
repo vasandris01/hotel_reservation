@@ -41,6 +41,6 @@ public class Rest {
     public List<Room> getAvailable(){
         return roomService.getAllAvailableRooms(
                 LocalDate.of(2023, 10, 1),
-                LocalDate.of(2023,11,1));
+                LocalDate.of(2023,11,1), 3);
     }
 }

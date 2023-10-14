@@ -25,12 +25,12 @@ public class RoomService {
         return roomRepo.findById(id).orElse(null);
     }
 
-    public List<Room> getAllAvailableRooms(LocalDate startDate, LocalDate endDate) {
+    public List<Room> getAllAvailableRooms(LocalDate startDate, LocalDate endDate, Integer guestNumber) {
         List<Reservation> wrongReservations = reservationService.betweenDates(startDate,endDate);
         Set<Integer> wrongRoomId = new HashSet<>();
         for (Reservation actual: wrongReservations) {
             wrongRoomId.add(actual.getRoom().getId());
         }
-        return roomRepo.findAllByIdNotIn(wrongRoomId);
+        return roomRepo.findAllByIdNotInAndRoomCapacityGreaterThanEqual(wrongRoomId, guestNumber);
     }
 }

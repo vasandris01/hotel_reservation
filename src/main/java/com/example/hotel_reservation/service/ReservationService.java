@@ -20,4 +20,8 @@ public class ReservationService {
     public List<Reservation> betweenDates(LocalDate start, LocalDate end){
         return reservationRepo.findAllByStartDateIsBetweenOrEndDateIsBetween(start,end,start,end);
     }
+
+    public void save(Reservation reservation) {
+        reservationRepo.save(reservation);
+    }
 }

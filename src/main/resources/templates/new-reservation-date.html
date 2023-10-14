@@ -8,6 +8,7 @@
 <form th:action="@{/reservation/new}" method="get">
   <input type="date" placeholder="pl.: 1997-04-01" th:field="*{reservation.startDate}">
   <input type="date" placeholder="pl.: 1997-04-01" th:field="*{reservation.endDate}">
+  <input type="number" min="1" placeholder="pl.: 1997-04-01" th:field="*{reservation.guestNumber}">
   <button type="submit">OK</button>
 </form>
 </body>

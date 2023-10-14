@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<form th:action="@{/reservation/new}" method="post" th:object="${reservation}">
+    <label for="room">Szoba:</label>
+    <select id="room" name="room.id">
+        <option th:each="room : ${rooms}" th:value="${room.id}" th:text="${room.roomNumber}"></option>
+    </select>
+
+    <label for="guest">Vendég:</label>
+    <select id="guest" name="guest.id">
+        <option th:each="guest : ${guests}" th:value="${guest.id}" th:text="${guest.prefix} + ' ' + ${guest.firstName} + ' ' + ${guest.lastName}"></option>
+    </select>
+
+    <input type="hidden" id="startDate" name="startDate" th:value="${reservation.startDate}" />
+    <input type="hidden" id="endDate" name="endDate" th:value="${reservation.endDate}" />
+    <input type="hidden" id="guestNumber" name="guestNumber" th:value="${reservation.guestNumber}" />
+
+    <button type="submit">OK</button>
+</form>
 
 </body>
 </html>

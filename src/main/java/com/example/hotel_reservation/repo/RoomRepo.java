@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface RoomRepo extends JpaRepository<Room,Integer> {
-    List<Room> findAllByIdNotIn(Collection<Integer> ids);
+    List<Room> findAllByIdNotInAndRoomCapacityGreaterThanEqual(Collection<Integer> ids, Integer guestNumber);
 }
