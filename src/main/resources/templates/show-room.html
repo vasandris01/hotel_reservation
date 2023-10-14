@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<a th:href="@{/home}">Home</a>
+<table>
+    <thead>
+    <tr>
+        <td>Room Number</td>
+        <td>Capacity</td>
+        <td>Price</td>
+        <td>Jacuzzi</td>
+        <td>Sauna</td>
+    </tr>
+    </thead>
+    <tr>
+        <td th:text="${room.roomNumber}"></td>
+        <td th:text="${room.roomCapacity}"></td>
+        <td th:text="${room.price}"></td>
+        <td th:text="${room.hasJacuzzi}"></td>
+        <td th:text="${room.hasSauna}"></td>
+    </tr>
+</table>
 </body>
 </html>
