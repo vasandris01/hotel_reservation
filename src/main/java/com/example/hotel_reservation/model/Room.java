@@ -1,13 +1,13 @@
 package com.example.hotel_reservation.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -22,4 +22,7 @@ public class Room {
     private Integer price;
     private Boolean hasJacuzzi;
     private Boolean hasSauna;
+    @OneToMany(mappedBy = "room")
+    @JsonBackReference
+    private List<Reservation> reservations;
 }

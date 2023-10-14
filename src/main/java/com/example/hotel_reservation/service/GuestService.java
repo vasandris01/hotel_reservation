@@ -19,4 +19,8 @@ public class GuestService {
     public Guest getGuestById(Integer id) {
         return guestRepo.findById(id).orElse(null);
     }
+
+    public void saveGuest(Guest guest) {
+        guestRepo.save(guest);
+    }
 }

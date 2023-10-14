@@ -5,6 +5,7 @@ import com.example.hotel_reservation.repo.ReservationRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -14,5 +15,9 @@ public class ReservationService {
 
     public List<Reservation> getAllReservations() {
         return reservationRepo.findAll();
+    }
+
+    public List<Reservation> betweenDates(LocalDate start, LocalDate end){
+        return reservationRepo.findAllByStartDateIsBetweenOrEndDateIsBetween(start,end,start,end);
     }
 }

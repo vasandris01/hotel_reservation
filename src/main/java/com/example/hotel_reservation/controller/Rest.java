@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -34,5 +35,12 @@ public class Rest {
     @GetMapping("/reservations")
     public List<Reservation> getAllReservations() {
         return reservationService.getAllReservations();
+    }
+
+    @GetMapping("/available")
+    public List<Room> getAvailable(){
+        return roomService.getAllAvailableRooms(
+                LocalDate.of(2023, 10, 1),
+                LocalDate.of(2023,11,1));
     }
 }

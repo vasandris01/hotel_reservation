@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -22,7 +23,7 @@ public class Guest {
     private String firstName;
     private String lastName;
     private String birthPlace;
-    private Date birthDate;
+    private LocalDate birthDate;
     private String personalId;
     private String email;
 }

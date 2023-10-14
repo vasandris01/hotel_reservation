@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/guest/new}" method="post">
+    <input type="text" placeholder="pl.: Mr" th:field="*{guest.prefix}">
+    <input type="text" placeholder="pl.: Pista" th:field="*{guest.firstName}">
+    <input type="text" placeholder="pl.: Kis" th:field="*{guest.lastName}">
+    <input type="text" placeholder="pl.: Budapest" th:field="*{guest.birthPlace}">
+    <input type="date" placeholder="pl.: 1997-04-01" th:field="*{guest.birthDate}">
+    <input type="text" placeholder="pl.: HG567234678" th:field="*{guest.personalId}">
+    <input type="text" placeholder="pl.: kis.pista@exaple.com" th:field="*{guest.email}">
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/reservation/new}" method="get">
+  <input type="date" placeholder="pl.: 1997-04-01" th:field="*{reservation.startDate}">
+  <input type="date" placeholder="pl.: 1997-04-01" th:field="*{reservation.endDate}">
+  <button type="submit">OK</button>
+</form>
+</body>
+</html>
