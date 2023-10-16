@@ -24,4 +24,8 @@ public class ReservationService {
     public void save(Reservation reservation) {
         reservationRepo.save(reservation);
     }
+
+    public void deleteReservationById(Integer id) {
+
+    }
 }

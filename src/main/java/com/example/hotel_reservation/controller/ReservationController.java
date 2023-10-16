@@ -7,10 +7,7 @@ import com.example.hotel_reservation.service.RoomService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/reservation")
@@ -47,6 +44,12 @@ public class ReservationController {
     @PostMapping("/new")
     public String createReservation(@ModelAttribute("reservation") Reservation reservation){
         reservationService.save(reservation);
+        return "redirect:/reservation";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteReservation(@PathVariable("id") Integer id){
+        reservationService.deleteReservationById(id);
         return "redirect:/reservation";
     }
 }
