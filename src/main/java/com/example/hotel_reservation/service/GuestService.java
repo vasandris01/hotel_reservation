@@ -23,4 +23,8 @@ public class GuestService {
     public void saveGuest(Guest guest) {
         guestRepo.save(guest);
     }
+
+    public void updateGuest(Guest guest) {
+        guestRepo.save(guest);
+    }
 }

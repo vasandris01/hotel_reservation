@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{'/guest' + ${post_url}}" method="post">
+    <input type="hidden"
+           th:value="${guest.id}"
+           th:field="*{guest.id}">
+    <input type="text"
+           th:placeholder="${guest.prefix} != null ? ${guest.prefix} : 'pl.: Mr'"
+           th:value="${guest.prefix}"
+           th:field="*{guest.prefix}">
+    <input type="text"
+           th:value="${guest.firstName}"
+           th:placeholder="${guest.firstName} != null ? ${guest.firstName} : 'pl.: Pista'"
+           th:field="*{guest.firstName}">
+    <input type="text"
+           th:value="${guest.lastName}"
+           th:placeholder="${guest.lastName} != null ? ${guest.lastName} : 'pl.: Kis'"
+           th:field="*{guest.lastName}">
+    <input type="text"
+           th:value="${guest.birthPlace}"
+           th:placeholder="${guest.birthPlace} != null ? ${guest.birthPlace} : 'pl.: Budapest'"
+           th:field="*{guest.birthPlace}">
+    <input type="date"
+           th:value="${guest.birthDate}"
+           th:placeholder="${guest.birthDate}"
+           th:field="*{guest.birthDate}">
+    <input type="text"
+           th:value="${guest.personalId}"
+           th:placeholder="${guest.personalId} != null ? ${guest.personalId} : 'pl.: HG567234678'"
+           th:field="*{guest.personalId}">
+    <input type="text"
+           th:value="${guest.email}"
+           th:placeholder="${guest.email} != null ? ${guest.email} : 'pl.: kis.pista@exaple.com'"
+           th:field="*{guest.email}">
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>

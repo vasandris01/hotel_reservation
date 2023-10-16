@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface ReservationRepo extends JpaRepository<Reservation, Integer> {
     List<Reservation> findAllByStartDateIsBetweenOrEndDateIsBetween(LocalDate start, LocalDate end,LocalDate startD, LocalDate endD);
+    void removeById(Integer id);
 }

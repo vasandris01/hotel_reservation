@@ -33,4 +33,8 @@ public class RoomService {
         }
         return roomRepo.findAllByIdNotInAndRoomCapacityGreaterThanEqual(wrongRoomId, guestNumber);
     }
+
+    public void updateRoom(Room room) {
+        roomRepo.save(room);
+    }
 }

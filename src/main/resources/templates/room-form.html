@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{'/room/edit/' + ${room.id}}" method="post">
+    <input type="hidden"
+           th:value="${room.id}"
+           th:field="*{room.id}">
+    <input type="number"
+           th:placeholder="${room.roomNumber}"
+           th:value="${room.roomNumber}"
+           th:field="*{room.roomNumber}">
+    <input type="number"
+           th:placeholder="${room.roomCapacity}"
+           th:value="${room.roomCapacity}"
+           th:field="*{room.roomCapacity}">
+    <input type="number"
+           th:placeholder="${room.price}"
+           th:value="${room.price}"
+           th:field="*{room.price}">
+    <input type="checkbox"
+           th:placeholder="${room.hasJacuzzi}"
+           th:value="${room.hasJacuzzi}"
+           th:field="*{room.hasJacuzzi}">
+    <input type="checkbox"
+           th:placeholder="${room.hasSauna}"
+           th:value="${room.hasSauna}"
+           th:field="*{room.hasSauna}">
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>
